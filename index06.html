@@ -18,20 +18,29 @@
 			num1 =tiradaDado();
 			num2 =tiradaDado();
 			arrayTiradas[i]=num1+num2;
-			//document.write("<br>"+arrayTiradas[i]);
 		}
-		var indices= new Array(13);
+		var indices= new Array(11);
 		indices.fill(0);
-		for (var i = 0; i < indices.length; i++) {
+		for (var i = 2; i < (indices.length+2); i++) {
 		  	for (var j = 0; j < arrayTiradas.length; j++) {
 		    if (i == arrayTiradas[j]) {
-		      indices[i] = indices[i] + 1;
+		      indices[i-2] = indices[i-2] + 1;
 		    }
 		  }
 		}
-		for(var i=2; i<13; i++){
-			document.write(i+": "+indices[i]+"<br>");
+		for(var i=0; i<11; i++){
+			document.write((i+2)+": "+indices[i]+"<br>");
 		}
+		var maxRep= Math.max.apply(Math, indices);
+		maxRep= indices.indexOf(maxRep)+2;
+		document.write("El numero que mas se repite es: "+maxRep+"<br>");
+		var minRep= Math.min.apply(Math, indices);
+		minRep= indices.indexOf(minRep)+2;
+		document.write("El numero que menos se repite es: "+minRep+"<br>");
+		var maxVal= Math.max.apply(Math, arrayTiradas);
+		document.write("El mayor resultado obtenido es: "+maxVal+"<br>");
+		var minVal= Math.min.apply(Math, arrayTiradas);
+		document.write("El menor resultado obtenido es: "+minVal+"<br>");
 		
 	</script>
 </body>
