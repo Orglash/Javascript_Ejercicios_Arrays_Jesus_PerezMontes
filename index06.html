@@ -13,6 +13,26 @@
     		
     		return resultado;
 		}
+		function maxRepeticiones(array){
+			var maxRep= Math.max.apply(Math, array);
+			maxRep= array.indexOf(maxRep)+2;
+			document.write("El numero que mas se repite es: "+maxRep+"<br>");
+		}
+		function minRepeticiones(array){
+			var minRep= Math.min.apply(Math, array);
+			minRep= array.indexOf(minRep)+2;
+			document.write("El numero que mas se repite es: "+minRep+"<br>");
+		}
+		function maxResultado(array){
+			var maxVal= Math.max.apply(Math, array);
+			maxVal= array.indexOf(maxVal)+2;
+			document.write("El numero que mas se repite es: "+maxVal+"<br>");
+		}
+		function maxResultado(array){
+			var minVal= Math.min.apply(Math, array);
+			minVal= array.indexOf(maxVal)+2;
+			document.write("El numero que mas se repite es: "+minVal+"<br>");
+		}
 		var arrayTiradas= new Array(100);
 		for(var i=0; i<100; i++){
 			num1 =tiradaDado();
@@ -31,17 +51,11 @@
 		for(var i=0; i<11; i++){
 			document.write((i+2)+": "+indices[i]+"<br>");
 		}
-		var maxRep= Math.max.apply(Math, indices);
-		maxRep= indices.indexOf(maxRep)+2;
-		document.write("El numero que mas se repite es: "+maxRep+"<br>");
-		var minRep= Math.min.apply(Math, indices);
-		minRep= indices.indexOf(minRep)+2;
-		document.write("El numero que menos se repite es: "+minRep+"<br>");
-		var maxVal= Math.max.apply(Math, arrayTiradas);
-		document.write("El mayor resultado obtenido es: "+maxVal+"<br>");
-		var minVal= Math.min.apply(Math, arrayTiradas);
-		document.write("El menor resultado obtenido es: "+minVal+"<br>");
-		
+
+		maxRepeticiones(indices);
+		minRepeticiones(indices);
+		maxResultado(arrayTiradas);
+		minResultado(arrayTiradas);		
 	</script>
 </body>
 </html>
