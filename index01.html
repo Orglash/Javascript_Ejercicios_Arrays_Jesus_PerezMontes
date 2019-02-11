@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Relacion Arrays. Ejercicio 1.</title>
+</head>
+<body>
+	<script>
+		function invertirCadena(cadena) {
+	  		var cont = cadena.length;
+	  		var cad_invertida = "";
+	 
+	  		while (cont>=0) {
+	    		cad_invertida = cad_invertida + cadena.charAt(cont);
+	    		cont--;
+	  		}
+	  		return cad_invertida;
+		}
+		document.write(invertirCadena(prompt("Introduzca una cadena de caracteres a invertir.")));
+
+	</script>
+</body>
+</html>

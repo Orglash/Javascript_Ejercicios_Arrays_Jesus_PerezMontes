@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Relacion Arrays. Ejercicio 4.</title>
+</head>
+<body>
+	<script> 
+		var valores = [true, 5, false, "hola", "adios", 2];
+		var palabras= new Array();
+		var numeros= new Array();
+		var booleans= new Array();
+
+		for(var i=0; i<valores.length; i++){
+			if(typeof valores[i]=="boolean"){
+				booleans.push(valores[i]);
+			}
+			if(typeof valores[i]=="number"){
+				numeros.push(valores[i]);
+			}
+			if(typeof valores[i]=="string"){
+
+				palabras.push(valores[i]);
+			}
+		}
+		
+		function comparaPalabras(palabras){
+			var palabraLarga="";
+			for(var i=0; i<palabras.length; i++){
+				if(palabras[i].length>palabraLarga.length){
+					palabraLarga=palabras[i];
+				}
+			}
+			return palabraLarga;
+		}
+
+		var palabraLarga= comparaPalabras(palabras);
+		document.write("La palabra mas larga del array es: "+palabraLarga);
+
+		var t_bool = valores[0] || valores[2];
+		document.write("<br>"+t_bool);
+
+		var f_bool = valores[0] && valores[2];
+		document.write("<br>"+f_bool);
+
+		var suma = 0;
+		for(var i=0; i<numeros.length; i++){
+			suma=suma+numeros[i]
+		}
+		document.write("<br>"+suma);
+
+		var resta =0;
+		for(var i=0; i<numeros.length; i++){
+			if (resta==0){
+				resta=numeros[i];
+			}else{
+				resta=resta-numeros[i]
+			}
+		}
+		document.write("<br>"+resta);
+
+		var multiplica = 0;
+		for(var i=0; i<numeros.length; i++){
+			if (multiplica==0){
+				multiplica=numeros[i];
+			}else{
+				multiplica=multiplica*numeros[i];
+			}			
+		}
+		document.write("<br>"+multiplica);
+
+		var divide = 0;
+		for(var i=0; i<numeros.length; i++){
+			if (divide==0){
+				divide=numeros[i];
+			}else{
+				divide=divide/numeros[i];
+			}
+		}
+		document.write("<br>"+divide);
+
+		var resto = 0;
+		for(var i=0; i<numeros.length; i++){
+			if (resto==0){
+				resto=numeros[i];
+			}else{
+				resto=resto%numeros[i];
+			}
+		}
+		document.write("<br>"+resto);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Relacion Arrays. Ejercicio 6.</title>
+</head>
+<body>
+	<script> 
+		function tiradaDado() {
+			do{
+				var resultado = (Math.round(6.49 * Math.random()));
+			}while(resultado<1);
+    		
+    		return resultado;
+		}
+		var arrayTiradas= new Array(100);
+		for(var i=0; i<100; i++){
+			num1 =tiradaDado();
+			num2 =tiradaDado();
+			arrayTiradas[i]=num1+num2;
+			//document.write("<br>"+arrayTiradas[i]);
+		}
+		var indices= new Array(13);
+		indices.fill(0);
+		for (var i = 0; i < indices.length; i++) {
+		  	for (var j = 0; j < arrayTiradas.length; j++) {
+		    if (i == arrayTiradas[j]) {
+		      indices[i] = indices[i] + 1;
+		    }
+		  }
+		}
+		for(var i=2; i<13; i++){
+			document.write(i+": "+indices[i]+"<br>");
+		}
+		
+	</script>
+</body>
+</html>
